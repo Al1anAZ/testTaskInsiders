@@ -123,7 +123,6 @@ export default function TabsBar() {
 
     const containerWidth = containerRef.current.offsetWidth;
     const scrollLeft = containerRef.current.scrollLeft;
-    let totalWidth = 0;
     const newHiddenTabs: string[] = [];
 
     tabs.forEach((tab, index) => {
