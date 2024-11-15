@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+
+  // &::-webkit-scrollbar {
+  //   width: 5px !important;
+  //   height: 3px;
+  // }
+
+  // &::-webkit-scrollbar-track {
+  //   background-image: url("/assets/scrollBar/track.webp");
+  //   background-size: 1px;
+  // }
+
+  // &::-webkit-scrollbar-thumb {
+  //   background: rgba(82, 133, 229, 1) !important;
+  // }
+}
+
+/* Обнуление отступов и полей */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+/* Обнуление шрифтов */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* Обнуление гиперссылок */
+a {
+  font: {
+    size: 16px;
+    weight: 400;
+  }
+
+  line-height: 20px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Обнуление списков */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Обнуление формы */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+/* Обнуление таблиц */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Обнуление изображений */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Обнуление кнопок */
+button {
+  font-size: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* Обнуление формы */
+input,
+select,
+textarea {
+  outline: none;
+  resize: none;
+}
+
+/* Обнуление стандартных стилей для HTML5-элементов */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
