@@ -5,13 +5,14 @@ import { useEffect, useRef, useState } from "react";
 import DeleteIcon from "@/assets/icons/deleteIcon";
 import DashboardIcon from "@/assets/icons/dashboardIcon";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 type TabProps = {
   text: string;
   handlePinTab: (tab: string) => void;
   isDragging?: boolean;
   index: number;
-  onContextMenu: (element: HTMLDivElement) => void;
+  onContextMenu: (element: HTMLAnchorElement) => void;
   setMenueOpened: (value: boolean) => void;
   deleteElement: (tabName: string) => void;
   isPinned?: boolean;
@@ -27,9 +28,12 @@ export default function Tab({
   onContextMenu,
   isPinned,
 }: TabProps) {
-  const menuRef = useRef<HTMLDivElement>(null);
-
-  const handleOpenTabPinMenue = (event: React.MouseEvent<HTMLDivElement>) => {
+  const pathname = usePathname();
+  const menuRef = useRef<HTMLAnchorElement>(null);
+  const isActive = decodeURIComponent(pathname) === `/${text}`;
+  const handleOpenTabPinMenue = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
     event.preventDefault();
     if (menuRef.current) {
       onContextMenu(menuRef.current);
@@ -60,6 +64,7 @@ export default function Tab({
         style.tab,
         isDragging && style.tab__isDragging,
         isPinned && style.tab__pinnedTab,
+        isActive && style.tab__acitve,
       ].join(" ")}
       tabIndex={0}
       onContextMenu={handleOpenTabPinMenue}

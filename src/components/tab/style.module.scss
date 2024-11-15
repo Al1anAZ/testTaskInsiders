@@ -15,10 +15,10 @@
   transition: all 0.2s;
   cursor: pointer;
 
+  &__acitve,
   &__pinnedTab {
     color: black;
     background-color: #f1f5f8;
-    border-top: 2px solid #4690e2;
 
     .tab__text {
       color: black;
@@ -28,6 +28,9 @@
         fill: black;
       }
     }
+  }
+  &__pinnedTab {
+    border-top: 2px solid #4690e2;
   }
   &:hover:not(.tab__isDragging) {
     background-color: #eff2f4;

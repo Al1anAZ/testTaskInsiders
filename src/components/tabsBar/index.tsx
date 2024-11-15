@@ -103,7 +103,7 @@ export default function TabsBar() {
     });
   };
 
-  const handleContextMenu = (element: HTMLDivElement) => {
+  const handleContextMenu = (element: HTMLAnchorElement) => {
     const rect = element.getBoundingClientRect();
     setMenuPosition({ x: rect.left, y: rect.bottom });
     setVisibleTabPinMenue(true);
