@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import styles from "./styles/layoutStyle.module.scss";
 import { Poppins } from "next/font/google";
 import "../defaultStyle/default.scss";
+import TabsBar from "@/components/tabsBar";
 
 export const metadata: Metadata = {
   title: "Test Task Insiders",
@@ -22,11 +23,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={[poppins.className, styles.layoutBody].join(" ")}>
         <aside className={styles.layoutBody__aside}></aside>
-        <div className="">
-          <header>
-            <nav></nav>
+        <div className={styles.layoutBody__headerAndContentContainer}>
+          <header className={styles.layoutBody__header}>
+            <div className={styles.layoutBody__headerContent}></div>
+            <TabsBar />
           </header>
-          {children}
+          <main className={styles.layoutBody__mainContent}> {children}</main>
         </div>
       </body>
     </html>

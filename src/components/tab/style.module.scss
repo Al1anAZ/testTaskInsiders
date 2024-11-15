@@ -1,0 +1,53 @@
+.tab {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  padding: {
+    left: 21px;
+    right: 21px;
+  }
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 10px;
+
+  transition: all 0.2s;
+  cursor: pointer;
+
+  &:hover:not(.tab__isDragging) {
+    background-color: #eff2f4;
+
+    .tab__text {
+      color: black;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 70%;
+    }
+    .tab__btnDelect {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  &__isDragging {
+    background-color: #7f858d !important;
+    .tab__text {
+      color: white !important;
+    }
+  }
+  &__text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #7f858d;
+    text-wrap: nowrap;
+  }
+  &__btnDelect {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background-color: #ee3f3e;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+  }
+}

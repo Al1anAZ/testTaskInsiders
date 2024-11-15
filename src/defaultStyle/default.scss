@@ -2,19 +2,18 @@
   box-sizing: border-box;
   font-family: "Segoe UI", sans-serif;
 
-  // &::-webkit-scrollbar {
-  //   width: 5px !important;
-  //   height: 3px;
-  // }
-
-  // &::-webkit-scrollbar-track {
-  //   background-image: url("/assets/scrollBar/track.webp");
-  //   background-size: 1px;
-  // }
-
-  // &::-webkit-scrollbar-thumb {
-  //   background: rgba(82, 133, 229, 1) !important;
-  // }
+  &::-webkit-scrollbar {
+    background-color: white;
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #7f858d66 !important;
+    border-radius: 40px;
+  }
 }
 
 /* Обнуление отступов и полей */

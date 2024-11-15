@@ -9,6 +9,24 @@
     background-color: white;
     width: 62px;
     height: 100%;
+    flex-shrink: 0;
     border-right: 1px solid #aeb6ce33;
+  }
+  &__headerContent {
+    height: 69px;
+    width: 100%;
+    border-left: 1px solid #aeb6ce33;
+    border-bottom: 1px solid #aeb6ce33;
+    background-color: white;
+  }
+  &__headerAndContentContainer {
+    height: 100%;
+    overflow: hidden;
+    width: 100%;
+  }
+  &__mainContent {
+    padding: 20px;
+    width: 100%;
+    height: calc(100% - 69px - 48px);
   }
 }
