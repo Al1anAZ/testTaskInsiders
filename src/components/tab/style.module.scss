@@ -2,7 +2,7 @@
   position: relative;
   background-color: white;
   height: 100%;
-  width: 100%;
+  width: auto;
   padding: {
     left: 21px;
     right: 21px;
@@ -19,6 +19,15 @@
     color: black;
     background-color: #f1f5f8;
     border-top: 2px solid #4690e2;
+
+    .tab__text {
+      color: black;
+    }
+    & > svg {
+      & path {
+        fill: black;
+      }
+    }
   }
   &:hover:not(.tab__isDragging) {
     background-color: #eff2f4;
@@ -28,11 +37,15 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      max-width: 70%;
+      max-width: 60%;
     }
-    .tab__btnDelect {
-      opacity: 1;
-      visibility: visible;
+    .tab__btnDelete {
+      display: block;
+    }
+    & > svg {
+      & path {
+        fill: black;
+      }
     }
   }
   &__isDragging {
@@ -47,14 +60,8 @@
     color: #7f858d;
     text-wrap: nowrap;
   }
-  &__btnDelect {
-    width: 13px;
-    height: 13px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s;
-    background-image: url("../../../public/assets/deleteBtn.png");
-    background-position: center;
-    background-size: cover;
+  &__btnDelete {
+    display: none;
+    width: auto;
   }
 }

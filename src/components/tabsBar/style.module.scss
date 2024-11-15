@@ -5,6 +5,31 @@
   display: flex;
   overflow-y: hidden;
   overflow-x: auto;
+  padding-right: 36px;
+
+  &__leftShadow::before {
+    content: "";
+    position: fixed;
+    top: 70px;
+    left: 62px;
+    height: 45px;
+    width: 30px;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &__rightShadow::after {
+    content: "";
+    position: fixed;
+    top: 70px;
+    right: 35px;
+    height: 45px;
+    width: 30px;
+    background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+    z-index: 1;
+    pointer-events: none;
+  }
   &__pinTabMenue {
     cursor: pointer;
     position: absolute;
@@ -23,9 +48,74 @@
     text-wrap: nowrap;
     padding: 10px 15px;
     transition: opacity 0.2s;
+
     &__open {
       opacity: 1;
       visibility: visible;
+    }
+  }
+  &__dropDownListContainer {
+    position: absolute;
+    right: 0;
+    top: 69px;
+
+    &__btn {
+      background-color: white;
+      width: 36px;
+      height: 48px;
+
+      transition: all 0.2s;
+      &__active {
+        background-color: #4690e2;
+      }
+    }
+    &__item {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      color: #7f858d;
+      font-size: 14px;
+
+      transition: all 0.2s;
+      &:hover {
+        color: #000;
+        .tabsBar__dropDownListContainer__textContainer {
+          & path {
+            fill: black;
+          }
+        }
+      }
+    }
+    &__textContainer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      & path {
+        transition: all 0.2s;
+      }
+    }
+    &__content {
+      position: absolute;
+      right: 0;
+      padding: 0 15px;
+      width: 225px;
+      height: 185px;
+      overflow: auto;
+      background-color: white;
+      transition: all 0.2s;
+      border-bottom-left-radius: 4px;
+      border: 1px solid #e9e9e9b2;
+      box-shadow: 0px 16px 30px 0px #e8e8e9;
+
+      opacity: 0;
+      visibility: hidden;
+
+      &__open {
+        opacity: 1;
+        visibility: visible;
+      }
     }
   }
 }

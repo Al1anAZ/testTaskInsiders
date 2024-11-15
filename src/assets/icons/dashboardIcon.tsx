@@ -10,7 +10,7 @@ export default function DashboardIcon({ width, hight, color }: IconType) {
       viewBox="0 0 16 16"
       fill="none"
     >
-      <g clip-path="url(#clip0_1_311)">
+      <g clipPath="url(#clip0_1_311)">
         <path
           d="M7.33333 7.33333H0V2C0 1.46957 0.210714 0.960859 0.585786 0.585786C0.960859 0.210714 1.46957 0 2 0L7.33333 0V7.33333ZM1.33333 6H6V1.33333H2C1.82319 1.33333 1.65362 1.40357 1.5286 1.5286C1.40357 1.65362 1.33333 1.82319 1.33333 2V6Z"
           fill={color}

@@ -1,6 +1,10 @@
-import PinIcon from "@/assets/icons/pinIcon";
+"use client";
+
 import style from "./style.module.scss";
 import { useEffect, useRef, useState } from "react";
+import DeleteIcon from "@/assets/icons/deleteIcon";
+import DashboardIcon from "@/assets/icons/dashboardIcon";
+import Link from "next/link";
 
 type TabProps = {
   text: string;
@@ -9,7 +13,7 @@ type TabProps = {
   index: number;
   onContextMenu: (element: HTMLDivElement) => void;
   setMenueOpened: (value: boolean) => void;
-  deleteElement: (index: number) => void;
+  deleteElement: (tabName: string) => void;
   isPinned?: boolean;
 };
 
@@ -50,7 +54,7 @@ export default function Tab({
   }, []);
 
   return (
-    <div
+    <Link
       ref={menuRef}
       className={[
         style.tab,
@@ -59,15 +63,23 @@ export default function Tab({
       ].join(" ")}
       tabIndex={0}
       onContextMenu={handleOpenTabPinMenue}
+      href={`/${text}`}
     >
-      <p className={style.tab__text}> {text}</p>
+      <DashboardIcon
+        width={16}
+        hight={16}
+        color={isDragging ? "white" : "#7F858D"}
+      />
+      <p className={style.tab__text}>{text}</p>
       <button
-        className={style.tab__btnDelect}
+        className={style.tab__btnDelete}
         onClick={(e) => {
           e.stopPropagation();
-          deleteElement(index);
+          deleteElement(text);
         }}
-      ></button>
-    </div>
+      >
+        <DeleteIcon width={13} hight={13} color="#EE3F3E" />
+      </button>
+    </Link>
   );
 }
