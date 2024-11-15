@@ -1,4 +1,5 @@
 .tab {
+  position: relative;
   background-color: white;
   height: 100%;
   width: 100%;
@@ -14,6 +15,11 @@
   transition: all 0.2s;
   cursor: pointer;
 
+  &__pinnedTab {
+    color: black;
+    background-color: #f1f5f8;
+    border-top: 2px solid #4690e2;
+  }
   &:hover:not(.tab__isDragging) {
     background-color: #eff2f4;
 
@@ -44,10 +50,11 @@
   &__btnDelect {
     width: 13px;
     height: 13px;
-    border-radius: 50%;
-    background-color: #ee3f3e;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s;
+    background-image: url("../../../public/assets/deleteBtn.png");
+    background-position: center;
+    background-size: cover;
   }
 }
